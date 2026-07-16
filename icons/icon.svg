@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs>
+    <clipPath id="ball"><circle cx="64" cy="64" r="58"/></clipPath>
+  </defs>
+  <circle cx="64" cy="64" r="58" fill="#FFFFFF"/>
+  <g clip-path="url(#ball)">
+    <polygon points="6.00,64.00 22.99,22.99 6.00,64.00" fill="#F19175"/>
+    <polygon points="22.99,22.99 35.00,64.00 6.00,64.00" fill="#E87A68"/>
+    <polygon points="22.99,22.99 64.00,6.00 35.00,64.00" fill="#E0625B"/>
+    <polygon points="64.00,6.00 64.00,64.00 35.00,64.00" fill="#D74D4E"/>
+    <polygon points="64.00,6.00 105.01,22.99 64.00,64.00" fill="#CF3942"/>
+    <polygon points="105.01,22.99 93.00,64.00 64.00,64.00" fill="#BD3246"/>
+    <polygon points="105.01,22.99 122.00,64.00 93.00,64.00" fill="#AB2B4A"/>
+    <polygon points="122.00,64.00 122.00,64.00 93.00,64.00" fill="#9A244F"/>
+    <rect x="0" y="57" width="128" height="14" fill="#1F2359"/>
+  </g>
+  <circle cx="64" cy="64" r="58" fill="none" stroke="#1F2359" stroke-width="7"/>
+  <circle cx="64" cy="64" r="17" fill="#1F2359"/>
+  <circle cx="64" cy="64" r="11" fill="#FFFFFF"/>
+  <circle cx="64" cy="64" r="6" fill="none" stroke="#1F2359" stroke-width="2"/>
+</svg>
