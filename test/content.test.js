@@ -6,7 +6,7 @@ const { JSDOM } = require('jsdom');
 
 // The content script resolves these globals at call time.
 globalThis.chrome = { runtime: { getURL: (path) => `chrome-extension://fake-id/${path}` } };
-globalThis.POKEMON_NAMES = require('../pokemon-names.js').POKEMON_NAMES;
+globalThis.PKMN_NAMES = require('../pkmn-names.js').PKMN_NAMES;
 
 const { deepQueryAll, slugFromInstanceName, ensureStyle, decorate, scan, PROCESSED } =
   require('../content.js');
@@ -45,7 +45,7 @@ function makeInstanceRow(name) {
   return label;
 }
 
-test('slugFromInstanceName parses "Adjective pokemon"', () => {
+test('slugFromInstanceName parses "Adjective pkmn"', () => {
   assert.equal(slugFromInstanceName('Tiny rhyhorn'), 'rhyhorn');
   assert.equal(slugFromInstanceName('Clever stantler'), 'stantler');
 });
@@ -65,7 +65,7 @@ test('slugFromInstanceName falls back to the last word', () => {
 });
 
 test('slugFromInstanceName returns null for unknown names', () => {
-  assert.equal(slugFromInstanceName('Weird notapokemon'), null);
+  assert.equal(slugFromInstanceName('Weird notapkmn'), null);
   assert.equal(slugFromInstanceName('Tiny'), null);
   assert.equal(slugFromInstanceName(''), null);
 });
@@ -90,7 +90,7 @@ test('scan injects a sprite into each known instance row', () => {
 });
 
 test('scan leaves unknown instance names untouched', () => {
-  const { instRoot } = buildConsoleDom(['Weird notapokemon']);
+  const { instRoot } = buildConsoleDom(['Weird notapkmn']);
   scan();
   assert.equal(instRoot.querySelectorAll('img').length, 0);
   assert.equal(instRoot.querySelector('.instance-name').hasAttribute(PROCESSED), false);
@@ -102,7 +102,7 @@ test('scan is idempotent: no duplicate sprites or styles', () => {
   scan();
   scan();
   assert.equal(instRoot.querySelectorAll('img').length, 1);
-  assert.equal(instRoot.querySelectorAll('style[data-pokemon-style]').length, 1);
+  assert.equal(instRoot.querySelectorAll('style[data-pkmn-style]').length, 1);
 });
 
 test('instances appearing later are decorated (MutationObserver)', async () => {
@@ -120,7 +120,7 @@ test('ensureStyle injects the hover-zoom stylesheet once', () => {
   const { instRoot } = buildConsoleDom([]);
   ensureStyle(instRoot);
   ensureStyle(instRoot);
-  const styles = instRoot.querySelectorAll('style[data-pokemon-style]');
+  const styles = instRoot.querySelectorAll('style[data-pkmn-style]');
   assert.equal(styles.length, 1);
   assert.match(styles[0].textContent, /\.ccp-sprite:hover/);
   assert.match(styles[0].textContent, /scale\(3\)/);

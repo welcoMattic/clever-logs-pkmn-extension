@@ -6,17 +6,17 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const ROOT = path.join(__dirname, '..');
-const { POKEMON_NAMES } = require('../pokemon-names.js');
+const { PKMN_NAMES } = require('../pkmn-names.js');
 
-test('pokemon-names.js contains the full Clever Cloud list', () => {
-  assert.equal(POKEMON_NAMES.size, 811);
+test('pkmn-names.js contains the full Clever Cloud list', () => {
+  assert.equal(PKMN_NAMES.size, 811);
   for (const known of ['pikachu', 'nidoran-f', 'rotom-heat', 'beedrill-mega', 'zygarde']) {
-    assert.ok(POKEMON_NAMES.has(known), `missing slug: ${known}`);
+    assert.ok(PKMN_NAMES.has(known), `missing slug: ${known}`);
   }
 });
 
 test('every slug has a non-empty bundled sprite', () => {
-  for (const slug of POKEMON_NAMES) {
+  for (const slug of PKMN_NAMES) {
     const file = path.join(ROOT, 'sprites', `${slug}.png`);
     const stat = fs.statSync(file);
     assert.ok(stat.size > 0, `empty sprite: ${slug}.png`);
@@ -25,7 +25,7 @@ test('every slug has a non-empty bundled sprite', () => {
 
 test('no orphan sprite files', () => {
   const files = fs.readdirSync(path.join(ROOT, 'sprites')).filter((f) => f.endsWith('.png'));
-  assert.equal(files.length, POKEMON_NAMES.size);
+  assert.equal(files.length, PKMN_NAMES.size);
 });
 
 test('manifest is valid and references existing files', () => {
@@ -52,11 +52,11 @@ test('manifest version matches package.json', () => {
   assert.equal(manifest.version, pkg.version);
 });
 
-test('pokemon-names.js and content.js are loaded in the right order', () => {
+test('pkmn-names.js and content.js are loaded in the right order', () => {
   const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, 'manifest.json'), 'utf8'));
   const js = manifest.content_scripts[0].js;
   assert.ok(
-    js.indexOf('pokemon-names.js') < js.indexOf('content.js'),
-    'pokemon-names.js must load before content.js',
+    js.indexOf('pkmn-names.js') < js.indexOf('content.js'),
+    'pkmn-names.js must load before content.js',
   );
 });

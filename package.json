@@ -1,13 +1,14 @@
 {
-  "name": "clever-logs-pokemon-extension",
+  "name": "clever-logs-pkmn-extension",
   "version": "1.0.0",
   "private": true,
-  "description": "Sprites Pokémon dans l'onglet Logs de la console Clever Cloud",
+  "description": "Sprites pkmn dans l'onglet Logs de la console Clever Cloud",
   "scripts": {
     "test": "node --test test/*.test.js",
     "build": "scripts/build.sh"
   },
   "devDependencies": {
+    "@playwright/test": "^1.61.1",
     "jsdom": "^25.0.0"
   }
 }

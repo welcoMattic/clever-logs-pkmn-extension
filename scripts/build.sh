@@ -5,13 +5,13 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 
 VERSION=$(node -p "require('./manifest.json').version")
-ZIP="dist/clever-logs-pokemon-extension-v${VERSION}.zip"
+ZIP="dist/clever-logs-pkmn-extension-v${VERSION}.zip"
 
 npm test
 
 mkdir -p dist
 rm -f "$ZIP"
-zip -qr "$ZIP" manifest.json content.js pokemon-names.js sprites icons \
+zip -qr "$ZIP" manifest.json content.js pkmn-names.js sprites icons \
   -x "icons/icon.svg" -x "*.DS_Store"
 
 echo "Built $ZIP ($(du -h "$ZIP" | cut -f1))"

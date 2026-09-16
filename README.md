@@ -1,6 +1,6 @@
-# Clever Cloud Logs Pokémon
+# Clever Cloud Logs Pkmn
 
-Extension navigateur qui affiche le sprite du Pokémon correspondant au nom d'instance de vos applications Clever Cloud, dans le sélecteur d'instances de l'onglet **Logs** de la [console](https://console.clever-cloud.com).
+Extension navigateur qui affiche le sprite pkmn correspondant au nom d'instance de vos applications Clever Cloud, dans le sélecteur d'instances de l'onglet **Logs** de la [console](https://console.clever-cloud.com).
 
 Clever Cloud nomme ses instances « Adjectif pokémon » (ex. *Tiny rhyhorn*) via [uuid_to_pokemon.rs](https://github.com/CleverCloud/uuid_to_pokemon.rs). L'extension embarque les 811 sprites correspondants (source : [PokeAPI/sprites](https://github.com/PokeAPI/sprites), CC0) et les injecte devant chaque nom d'instance.
 
@@ -21,7 +21,7 @@ Pour une installation permanente, l'extension doit être signée via [AMO](https
 
 ### Safari (macOS, Xcode requis)
 ```sh
-xcrun safari-web-extension-converter . --app-name "Clever Logs Pokemon"
+xcrun safari-web-extension-converter . --app-name "Clever Logs Pkmn"
 ```
 Puis lancer l'app générée, et activer l'extension dans Safari → Réglages → Extensions (autoriser les extensions non signées dans le menu Développement si besoin).
 
@@ -43,7 +43,7 @@ Les tests unitaires reconstruisent la structure shadow DOM de la console (jsdom)
 ## Release
 
 ```sh
-npm run build   # lance les tests puis produit dist/clever-logs-pokemon-extension-v<version>.zip
+npm run build   # lance les tests puis produit dist/clever-logs-pkmn-extension-v<version>.zip
 ```
 
 Le zip (~840 Ko) est prêt pour le Chrome Web Store, Edge Add-ons et Firefox AMO (même archive). Pour Safari, convertir le dossier avec `safari-web-extension-converter` (voir Installation). Penser à incrémenter `version` dans `manifest.json` **et** `package.json` (un test vérifie qu'elles concordent).
@@ -54,8 +54,9 @@ Le zip (~840 Ko) est prêt pour le Chrome Web Store, Edge Add-ons et Firefox AMO
 python3 scripts/fetch_sprites.py
 ```
 
-Le script retélécharge la liste de noms depuis le repo Clever Cloud, mappe chaque slug vers son ID PokeAPI et télécharge les sprites manquants dans `sprites/`, puis régénère `pokemon-names.js`.
+Le script retélécharge la liste de noms depuis le repo Clever Cloud, mappe chaque slug vers son ID PokeAPI et télécharge les sprites manquants dans `sprites/`, puis régénère `pkmn-names.js`.
 
 ## Licences
 
+- Code sous licence MIT (voir `LICENSE`).
 - Sprites distribués via [PokeAPI/sprites](https://github.com/PokeAPI/sprites) (CC0 1.0). Les artworks Pokémon restent la propriété de The Pokémon Company / Nintendo / Game Freak.

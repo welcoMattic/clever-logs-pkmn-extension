@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Clever Cloud Logs Pokémon",
+  "name": "Clever Cloud Logs Pkmn",
   "version": "1.0.0",
-  "description": "Affiche le sprite du Pokémon correspondant au nom d'instance dans l'onglet Logs de la console Clever Cloud.",
+  "description": "Affiche le sprite pkmn correspondant au nom d'instance dans l'onglet Logs de la console Clever Cloud.",
   "icons": {
     "48": "icons/icon48.png",
     "96": "icons/icon96.png",
@@ -11,7 +11,7 @@
   "content_scripts": [
     {
       "matches": ["https://console.clever-cloud.com/*"],
-      "js": ["pokemon-names.js", "content.js"],
+      "js": ["pkmn-names.js", "content.js"],
       "run_at": "document_idle"
     }
   ],
@@ -23,7 +23,7 @@
   ],
   "browser_specific_settings": {
     "gecko": {
-      "id": "clever-logs-pokemon@mathieu.santostefano"
+      "id": "clever-logs-pkmn@mathieu.santostefano"
     }
   }
 }
