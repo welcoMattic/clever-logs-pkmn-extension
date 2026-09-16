@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Clever Cloud console Logs fixture</title>
+</head>
+<body>
+<script>
+  // Replicates the console Logs tab: the instance selector lives in nested
+  // open shadow roots (cc-logs-app-runtime-beta > cc-logs-instances-beta).
+  'use strict';
+
+  function makeInstanceRow(name) {
+    const label = document.createElement('label');
+    label.className = 'instance';
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    const span = document.createElement('span');
+    span.className = 'instance-name';
+    span.textContent = name;
+    label.append(checkbox, span);
+    return label;
+  }
+
+  const app = document.createElement('cc-logs-app-runtime-beta');
+  const appRoot = app.attachShadow({ mode: 'open' });
+  const instances = document.createElement('cc-logs-instances-beta');
+  const instRoot = instances.attachShadow({ mode: 'open' });
+  const container = document.createElement('div');
+  container.className = 'instances';
+  container.style.cssText = 'padding-left: 24px; width: 280px; margin-top: 60px;';
+
+  for (const name of ['Petite rotom-heat', 'Clever stantler', 'Weird notapkmn']) {
+    container.append(makeInstanceRow(name));
+  }
+
+  instRoot.append(container);
+  appRoot.append(instances);
+  document.body.append(app);
+
+  // Used by tests to simulate an instance appearing after a deployment.
+  window.addInstance = (name) => container.append(makeInstanceRow(name));
+</script>
+</body>
+</html>
