@@ -6,14 +6,14 @@ Actions `Release` workflow rebuilds it and can push it to both stores.
 
 ## Before the first submission
 
-- [ ] Decide on the icon. `icons/icon.*` is a Poké Ball: it leans on the same
-      trademark the extension name was renamed away from, and it is the most
-      likely rejection trigger left. Replace it or accept the risk.
-- [ ] Support contact. The repository stays private, so neither store gets a
-      homepage or issue-tracker URL: provide a support email instead. AMO
-      reviewers may ask for the sources, answer with the archive itself (no
-      build step, nothing minified).
-- [ ] Screenshots captured (see `screenshots.md`).
+- [x] Icon: `icons/icon.*` stays as it is, a Poké Ball. The trademark risk it
+      carries is accepted knowingly; it is the most likely rejection trigger
+      left.
+- [x] Support contact: contact@welcomattic.com. The repository stays private,
+      so neither store gets a homepage or issue-tracker URL. AMO reviewers may
+      ask for the sources, answer with the archive itself (no build step,
+      nothing minified).
+- [x] Screenshots captured (`store/screenshots/`).
 - [ ] `npm run build` green (it runs `npm test` and `npm run lint` first).
 
 ## Chrome Web Store

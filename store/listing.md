@@ -12,7 +12,7 @@ franchise name: the listing must read `pkmn` everywhere.
 | Version | see `manifest.json` |
 | Category | Developer Tools (CWS) / Web Development (AMO) |
 | Homepage | none (repository is private) |
-| Support | support email, to fill in at submission time |
+| Support | contact@welcomattic.com |
 | License | MIT |
 | Permissions | none (host match on `https://console.clever-cloud.com/*` only) |
 | Data collected | none |

@@ -22,10 +22,10 @@ Captured on the real console (app `photobook`, three instances), 1280x800 PNG:
 | `01-instances.png` | the instance selector, one sprite per instance |
 | `02-hover-zoom.png` | `Fussy bonsly` hovered, sprite zoomed to x3 |
 
-The log panel is blurred on purpose: the lines carried client IP addresses and
-application URLs. Only the left panel, the subject of the screenshots, is
-sharp. Still visible and to check before uploading: the application name
-`photobook`, its `app_...` id and the account avatar in the left rail.
+Blurred on purpose: the log panel (the lines carried client IP addresses and
+application URLs), the application name and its `app_...` id. Only the
+instance selector, the subject of the screenshots, is sharp. The account
+avatar in the left rail is left as it is.
 
 A third shot (before / after, side by side) is optional.
 
