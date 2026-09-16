@@ -9,10 +9,10 @@ Actions `Release` workflow rebuilds it and can push it to both stores.
 - [x] Icon: `icons/icon.*` stays as it is, a Poké Ball. The trademark risk it
       carries is accepted knowingly; it is the most likely rejection trigger
       left.
-- [x] Support contact: contact@welcomattic.com. The repository stays private,
-      so neither store gets a homepage or issue-tracker URL. AMO reviewers may
-      ask for the sources, answer with the archive itself (no build step,
-      nothing minified).
+- [x] Support: the Chrome Web Store wants a URL, not an email, so the
+      repository is public and its issue tracker is the support channel:
+      https://github.com/welcoMattic/clever-logs-pkmn-extension/issues
+      (contact@welcomattic.com as the support email where one is asked for).
 - [x] Screenshots captured (`store/screenshots/`).
 - [ ] `npm run build` green (it runs `npm test` and `npm run lint` first).
 

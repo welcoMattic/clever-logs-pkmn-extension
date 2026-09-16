@@ -14,8 +14,9 @@ nothing gets pasted into a form with hard wraps in the middle of a sentence.
 | Extension name | Clever Cloud Logs Pkmn |
 | Version | see `manifest.json` |
 | Category | Developer Tools (CWS) / Web Development (AMO) |
-| Homepage | none (repository is private) |
-| Support | contact@welcomattic.com |
+| Homepage | https://github.com/welcoMattic/clever-logs-pkmn-extension |
+| Support URL | https://github.com/welcoMattic/clever-logs-pkmn-extension/issues |
+| Support email | contact@welcomattic.com |
 | License | MIT |
 | Permissions | none (host match on `https://console.clever-cloud.com/*` only) |
 | Data collected | none |
@@ -45,7 +46,8 @@ This extension puts the matching 96x96 sprite next to every instance name in the
 - No account, no login, no configuration.
 - Requests no permission, runs no background script, sends no network request: the 811 sprites are bundled with the extension.
 - Collects no data whatsoever.
-- Open source (MIT). Sprites redistributed from PokeAPI/sprites under CC0.
+- Open source (MIT): https://github.com/welcoMattic/clever-logs-pkmn-extension
+- Sprites redistributed from PokeAPI/sprites under CC0.
 
 Not affiliated with Clever Cloud.
 ```
@@ -65,7 +67,7 @@ The content script only runs on the Clever Cloud console, where the instance sel
 **Notes to reviewer** (AMO)
 
 ```
-No build step: the archive holds the sources as they are written, nothing is minified or generated at package time. content.js is the only logic, about 140 lines. sprites/ holds 811 PNG files redistributed from PokeAPI/sprites (CC0 1.0), listed in pkmn-names.js. The repository is private; sources can be provided on request.
+No build step: the archive holds the sources as they are written, nothing is minified or generated at package time. content.js is the only logic, about 140 lines. sprites/ holds 811 PNG files redistributed from PokeAPI/sprites (CC0 1.0), listed in pkmn-names.js. Sources: https://github.com/welcoMattic/clever-logs-pkmn-extension
 ```
 
 ## French
@@ -93,7 +95,8 @@ Cette extension place le sprite correspondant à côté de chaque nom d'instance
 - Aucun compte, aucune connexion, aucune configuration.
 - Aucune permission, aucun script d'arrière-plan, aucune requête réseau : les 811 sprites sont embarqués dans l'extension.
 - Aucune donnée collectée.
-- Open source (MIT). Sprites redistribués depuis PokeAPI/sprites sous CC0.
+- Open source (MIT) : https://github.com/welcoMattic/clever-logs-pkmn-extension
+- Sprites redistribués depuis PokeAPI/sprites sous CC0.
 
 Extension non affiliée à Clever Cloud.
 ```
