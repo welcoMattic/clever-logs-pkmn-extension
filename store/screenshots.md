@@ -13,14 +13,23 @@ a mock page is grounds for rejection on both stores.
 
 Optional Chrome Web Store promo tiles: small 440x280, marquee 1400x560.
 
-## Shots to take
+## Available shots
 
-1. **The instance selector, sprites in place.** Logs tab of an application
-   with at least three running instances, right-hand panel visible.
-2. **A sprite zoomed on hover** (x3, native resolution).
-3. **Before / after**, side by side, if a third shot is wanted.
+Captured on the real console (app `photobook`, three instances), 1280x800 PNG:
 
-## How to capture
+| File | Shot |
+| --- | --- |
+| `01-instances.png` | the instance selector, one sprite per instance |
+| `02-hover-zoom.png` | `Fussy bonsly` hovered, sprite zoomed to x3 |
+
+The log panel is blurred on purpose: the lines carried client IP addresses and
+application URLs. Only the left panel, the subject of the screenshots, is
+sharp. Still visible and to check before uploading: the application name
+`photobook`, its `app_...` id and the account avatar in the left rail.
+
+A third shot (before / after, side by side) is optional.
+
+## How to capture them again
 
 1. Load the unpacked extension in the browser (`chrome://extensions` →
    developer mode → load unpacked, pointing at the repository root).
