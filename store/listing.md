@@ -35,7 +35,7 @@ Shows the sprite matching each instance name in the Logs tab of the Clever Cloud
 
 ```
 Clever Cloud names every application instance "Adjective slug" (for example
-"Tiny rhyhorn"), using its own uuid_to_pokemon.rs generator. Telling those
+"Tiny rhyhorn"), using its own open source name generator. Telling those
 instances apart in the Logs tab means reading the names carefully.
 
 This extension puts the matching 96x96 sprite next to every instance name in
@@ -123,8 +123,8 @@ Affiche le sprite correspondant à chaque nom d'instance dans l'onglet Logs de l
 
 ```
 Clever Cloud nomme chaque instance « Adjectif slug » (par exemple « Tiny
-rhyhorn »). Dans l'onglet Logs, distinguer ses instances demande de lire les
-noms un par un.
+rhyhorn »), via son générateur de noms open source. Dans l'onglet Logs,
+distinguer ses instances demande de lire les noms un par un.
 
 Cette extension place le sprite correspondant à côté de chaque nom d'instance
 dans le sélecteur d'instances de l'onglet Logs. Au survol, le sprite s'agrandit
