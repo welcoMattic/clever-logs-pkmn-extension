@@ -30,11 +30,19 @@
   container.className = 'instances';
   container.style.cssText = 'padding-left: 24px; width: 280px; margin-top: 60px;';
 
+  // The real component lays rows out as stacked flex lines: without it the
+  // default inline labels would all share one text line and the sprites
+  // would pile up at the same position.
+  const style = document.createElement('style');
+  style.textContent = `
+    label.instance { display: flex; align-items: center; gap: 0.5em; height: 28px; }
+  `;
+
   for (const name of ['Petite rotom-heat', 'Clever stantler', 'Weird notapkmn']) {
     container.append(makeInstanceRow(name));
   }
 
-  instRoot.append(container);
+  instRoot.append(style, container);
   appRoot.append(instances);
   document.body.append(app);
 
