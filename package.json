@@ -5,10 +5,14 @@
   "description": "Sprites pkmn dans l'onglet Logs de la console Clever Cloud",
   "scripts": {
     "test": "node --test test/*.test.js",
-    "build": "scripts/build.sh"
+    "test:functional": "playwright test",
+    "lint": "web-ext lint",
+    "build": "scripts/build.sh",
+    "postinstall": "npm run lint"
   },
   "devDependencies": {
     "@playwright/test": "^1.61.1",
-    "jsdom": "^25.0.0"
+    "jsdom": "^25.0.0",
+    "web-ext": "^10.6.0"
   }
 }

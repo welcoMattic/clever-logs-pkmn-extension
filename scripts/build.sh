@@ -8,6 +8,7 @@ VERSION=$(node -p "require('./manifest.json').version")
 ZIP="dist/clever-logs-pkmn-extension-v${VERSION}.zip"
 
 npm test
+npm run lint
 
 mkdir -p dist
 rm -f "$ZIP"

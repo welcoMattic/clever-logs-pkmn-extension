@@ -34,9 +34,14 @@ Puis lancer l'app générée, et activer l'extension dans Safari → Réglages �
 ## Développement
 
 ```sh
-npm install   # dépendances de test uniquement (jsdom), l'extension n'a aucun build
-npm test      # node:test : parsing des noms, traversée shadow DOM, injection, assets
+npm install          # dépendances de dev uniquement, l'extension n'a aucun build
+npm test             # node:test : parsing des noms, traversée shadow DOM, injection, assets
+npm run test:functional  # Playwright : Chromium, Firefox, WebKit + extension réelle
+npm run lint         # web-ext lint (addons-linter), aussi lancé en postinstall
 ```
+
+`npm ci --ignore-scripts` saute le `postinstall` : la CI relance donc `npm run lint`
+explicitement.
 
 Les tests unitaires reconstruisent la structure shadow DOM de la console (jsdom) et vérifient le parsing « Adjectif slug », l'injection des sprites, l'idempotence, la détection des nouvelles instances (MutationObserver) et le zoom au survol. Les tests d'assets valident les 811 sprites, le manifest et la cohérence des versions.
 
@@ -46,7 +51,7 @@ Les tests unitaires reconstruisent la structure shadow DOM de la console (jsdom)
 npm run build   # lance les tests puis produit dist/clever-logs-pkmn-extension-v<version>.zip
 ```
 
-Le zip (~840 Ko) est prêt pour le Chrome Web Store, Edge Add-ons et Firefox AMO (même archive). Pour Safari, convertir le dossier avec `safari-web-extension-converter` (voir Installation). Penser à incrémenter `version` dans `manifest.json` **et** `package.json` (un test vérifie qu'elles concordent).
+Le zip (~840 Ko) est prêt pour le Chrome Web Store, Edge Add-ons et Firefox AMO (même archive). Textes de listing, procédure de soumission et secrets GitHub Actions : voir [`store/`](store/). La publication sur les stores se déclenche à la main depuis l'onglet Actions (workflow `Release`). Pour Safari, convertir le dossier avec `safari-web-extension-converter` (voir Installation). Penser à incrémenter `version` dans `manifest.json` **et** `package.json` (un test vérifie qu'elles concordent).
 
 ## Régénérer les sprites
 

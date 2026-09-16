@@ -46,6 +46,14 @@ test('manifest is valid and references existing files', () => {
   assert.ok(!manifest.background, 'extension must not have a background script');
 });
 
+test('manifest declares no data collection (required by AMO)', () => {
+  const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, 'manifest.json'), 'utf8'));
+  assert.deepEqual(
+    manifest.browser_specific_settings.gecko.data_collection_permissions,
+    { required: ['none'] },
+  );
+});
+
 test('manifest version matches package.json', () => {
   const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, 'manifest.json'), 'utf8'));
   const pkg = JSON.parse(fs.readFileSync(path.join(ROOT, 'package.json'), 'utf8'));
