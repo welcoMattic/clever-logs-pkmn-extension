@@ -61,6 +61,10 @@ python3 scripts/fetch_sprites.py
 
 Le script retélécharge la liste de noms depuis le repo Clever Cloud, mappe chaque slug vers son ID PokeAPI et télécharge les sprites manquants dans `sprites/`, puis régénère `pkmn-names.js`.
 
+## Sponsors
+
+Si ce projet vous est utile, vous pouvez soutenir mon travail open source sur [GitHub Sponsors](https://github.com/sponsors/welcoMattic). Les paliers et ce qu'ils financent : [blog.welcomattic.com/sponsors](https://blog.welcomattic.com/sponsors/). À partir du palier Company (100 $ par mois), votre logo et un lien apparaissent ici.
+
 ## Licences
 
 - Code sous licence MIT (voir `LICENSE`).
